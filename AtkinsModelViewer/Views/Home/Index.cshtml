@@ -3,13 +3,29 @@
 }
 
 <!-- The Viewer will be instantiated here -->
-<div id="MyViewerDiv" class="AutodeskViewer"></div>
-
+<div class="row">
+    <div class="col-sm-4">
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="tooltip">
+                Buckets &amp; Objects
+                <img src="/Images/refresh.png" id="refreshBuckets" style="vertical-align: top; cursor: pointer" title="Refresh Buckets &amp; Objects" height="20" />
+                <button class="btn btn-xs btn-info" style="float: right" id="showFormCreateBucket" data-toggle="modal" data-target="#createBucketModal"><span class="glyphicon glyphicon-folder-close"></span> New bucket</button>
+            </div>
+            <div id="appBuckets" class="foldertree">
+                tree here
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <div id="MyViewerDiv" class="AutodeskViewer"></div>
+    </div>
+</div>
 @section Scripts
 {
     <!-- The Viewer JS -->
     <script src="https://developer.api.autodesk.com/viewingservice/v1/viewers/three.min.js"></script>
     <script src="https://developer.api.autodesk.com/viewingservice/v1/viewers/viewer3D.min.js"></script>
+
 
     <!-- Developer JS -->
     <script>
